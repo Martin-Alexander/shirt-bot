@@ -10,9 +10,14 @@ class PersistDialogDataService
     return unless shirt
 
     shirt.update(gender: shirt_fit, size: size, slack_username: slack_username)
+    HTTP.post(response_url, json: { delete_original: true, text: 'Thank you for submitting.' })
   end
 
   private
+
+  def response_url
+    payload.dig('response_url')
+  end
 
   def user_uid
     payload.dig('user', 'id')

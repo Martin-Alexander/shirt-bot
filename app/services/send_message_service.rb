@@ -1,15 +1,15 @@
 class SendMessageService
-  attr_reader :channel_id
+  attr_reader :user_uid
 
   def initialize(user_uid)
     @user_uid = user_uid
-    fetch_im_channel
   end
 
   def send
     SlackClient.chat_postMessage(
-      channel: 'CKQKXGHR7',
+      channel: user_uid,
       text: 'Do you want a Le Wagon t-shirt',
+      response_type: 'ephemeral',
       attachments: [
         {
           text: 'We need to get some information first',
@@ -28,9 +28,5 @@ class SendMessageService
         }
       ]
     )
-  end
-
-  def fetch_im_channel
-
   end
 end

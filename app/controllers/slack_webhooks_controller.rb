@@ -12,7 +12,9 @@ class SlackWebhooksController < ApplicationController
     if params[:payload]
       payload = JSON.parse(params[:payload])
       OpenDialogService.new(payload).send if payload['type'] == 'interactive_message'
-      PersistDialogDataService.new(payload).save if payload['type'] == 'dialog_submission'
+      if payload['type'] == 'dialog_submission'
+        PersistDialogDataService.new(payload).save
+      end
     end
   end
 end
