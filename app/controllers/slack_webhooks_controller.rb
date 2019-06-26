@@ -3,7 +3,7 @@ class SlackWebhooksController < ApplicationController
 
   def create
     command = params[:command]
-    if command.match?(/sizer/)
+    if command&.match?(/sizer/)
       channel = params[:text]
       user_slack_uuid = params[:user_id]
       PushSizerToStudentsJob.perform_later(channel, user_slack_uuid)
