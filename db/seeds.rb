@@ -1,7 +1,7 @@
 Batch.destroy_all
 
-batch_one = Batch.create! number: 1, issuer_slack_user_id: "poiuy"
-batch_two = Batch.create! number: 2, issuer_slack_user_id: "lkjhg"
+batch_one = Batch.create! number: 1, issuer_slack_user_id: "DKW9E24AG"
+batch_two = Batch.create! number: 2, issuer_slack_user_id: "DKYJVFY4X"
 
 shirt_attributes_one = [
   {
