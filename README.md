@@ -1,24 +1,13 @@
-# README
+# Le Wagon ShirtBot
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An automated T-shirt survey for your students. It provides a slash command `/sizer` in your Slack Team.
 
-Things you may want to cover:
+## Usage
 
-* Ruby version
+1. Install the ShirtBot Slack app in your workspace.
+1. Type `/sizer [batch-000-city]`.
+1. Wait for it.
 
-* System dependencies
+## Contribution
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+You can fork, clone and submit pull requests.
