@@ -1,0 +1,2 @@
+module SlackWehooksHelper
+end
