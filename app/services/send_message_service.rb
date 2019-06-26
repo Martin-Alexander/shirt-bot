@@ -1,8 +1,9 @@
 class SendMessageService
   attr_reader :channel_id
 
-  def initialize(channel_id = 'DKWPC53C5')
-    @channel_id = channel_id
+  def initialize(user_uid)
+    @user_uid = user_uid
+    fetch_im_channel
   end
 
   def send
@@ -27,5 +28,9 @@ class SendMessageService
         }
       ]
     )
+  end
+
+  def fetch_im_channel
+
   end
 end

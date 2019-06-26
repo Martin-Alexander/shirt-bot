@@ -3,7 +3,6 @@ class PushSizerToStudentJob < ApplicationJob
 
   def perform(uuid, batch_id)
     Shirt.create(batch_id: batch_id, slack_user_id: uuid)
-    # TODO: send survey to student
     SendMessageService.new(uuid).send
   end
 end

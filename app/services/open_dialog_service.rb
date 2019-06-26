@@ -3,7 +3,7 @@ class OpenDialogService
 
   def initialize(payload)
     @payload = payload
-    @trigger_id = payload[:trigger_id]
+    @trigger_id = payload['trigger_id']
   end
 
   def send

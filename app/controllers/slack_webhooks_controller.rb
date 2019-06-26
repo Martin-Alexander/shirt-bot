@@ -7,12 +7,12 @@ class SlackWebhooksController < ApplicationController
       channel = params[:text]
       user_slack_uuid = params[:user_id]
       PushSizerToStudentsJob.perform_later(channel, user_slack_uuid)
+      render json: { status: :ok }
     end
     if params[:payload]
       payload = JSON.parse(params[:payload])
-      OpenDialogService.new(payload).send if payload[:type] == 'dialog_submission'
+      OpenDialogService.new(payload).send if payload['type'] == 'interactive_message'
+      PersistDialogDataService.new(payload).save if payload['type'] == 'dialog_submission'
     end
-    # TODO: SAVE INFORMATION FROM DIALOG (BEN)
-    render json: { status: :ok }
   end
 end
