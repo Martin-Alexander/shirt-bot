@@ -1,13 +1,13 @@
 class SendMessageService
   attr_reader :channel_id
 
-  def initialize(channel_id = 'DKWP42RRN')
+  def initialize(channel_id = 'DKWPC53C5')
     @channel_id = channel_id
   end
 
   def send
     SlackClient.chat_postMessage(
-      channel: 'CKWNMQ3NZ',
+      channel: 'CKQKXGHR7',
       text: 'Do you want a Le Wagon t-shirt',
       attachments: [
         {
