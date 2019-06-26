@@ -2,7 +2,6 @@ class SlackWebhooksController < ApplicationController
   skip_before_action :verify_authenticity_token, only: :create
 
   def create
-    binding.pry
     command = params[:command]
     if command.match? /sizer/
       # TODO fetch members from channel
