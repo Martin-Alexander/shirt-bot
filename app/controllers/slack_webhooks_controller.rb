@@ -7,7 +7,15 @@ class SlackWebhooksController < ApplicationController
       channel = params[:text]
       user_slack_uuid = params[:user_id]
       PushSizerToStudentsJob.perform_later(channel, user_slack_uuid)
+      answer = {
+        "text": "Sizer has been sent to ##{channel}",
+        "attachments": [
+          {
+            "text": "You can have a break ."
+          }
+        ]
+      }
     end
-    render json: { status: :ok }
+    render json: answer
   end
 end
