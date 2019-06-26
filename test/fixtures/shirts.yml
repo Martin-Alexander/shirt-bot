@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  size: MyString
+  gender: MyString
+  batch: one
+  slack_username: MyString
+  slack_uuid: MyString
+
+two:
+  size: MyString
+  gender: MyString
+  batch: two
+  slack_username: MyString
+  slack_uuid: MyString
