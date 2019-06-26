@@ -11,6 +11,7 @@ gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
 gem 'slack-ruby-client'
 gem 'uglifier', '>= 1.3.0'
+gem "http"
 
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'

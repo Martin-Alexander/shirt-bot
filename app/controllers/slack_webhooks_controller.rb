@@ -11,11 +11,18 @@ class SlackWebhooksController < ApplicationController
         "text": "Sizer has been sent to ##{channel}",
         "attachments": [
           {
-            "text": "You can have a break ."
+            "text": "You can have a break."
           }
         ]
       }
+      render json: answer
     end
-    render json: answer
+    if params[:payload]
+      payload = JSON.parse(params[:payload])
+      OpenDialogService.new(payload).send if payload['type'] == 'interactive_message'
+      if payload['type'] == 'dialog_submission'
+        PersistDialogDataService.new(payload).save
+      end
+    end
   end
 end
