@@ -1,3 +1,5 @@
+Batch.destroy_all
+
 batch_one = Batch.create! number: 1, issuer_slack_user_id: "poiuy"
 batch_two = Batch.create! number: 2, issuer_slack_user_id: "lkjhg"
 
